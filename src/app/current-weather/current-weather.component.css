@@ -1,0 +1,5 @@
+#close_btn::after {
+    content: "";
+    display: table;
+    clear: both;
+}

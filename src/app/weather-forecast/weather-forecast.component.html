@@ -1,0 +1,20 @@
+<section class="w-full p-0.5 flex max-w-full overflow-auto">
+  <ng-container *ngFor="let day of weatherData?.forecast?.forecastday">
+    <div
+      *ngIf="weatherData?.forecast?.forecastday?.[0] !==day"
+      class="rounded-2xl bg-gray-400/80 p-4 m-1 flex flex-col flex-none basis-54 text-center"
+    >
+      <span class="text-sm">{{ day.date | date : "EEE, dd LLLL" }}</span>
+      <img
+        class="w-24 h-24 block m-auto"
+        [src]="day.day.condition.icon"
+        [alt]="day.day.condition.text"
+        [title]="day.day.condition.text"
+      />
+      <span class="text-sm">{{ day.day.condition.text }}</span>
+      <span class="text-lg font-bold">Avg {{ day.day.avgtemp_c }}&deg;C</span>
+      <span class="text-sm">Sunrise {{ day.astro.sunrise }}</span>
+      <span class="text-sm">Sunset {{ day.astro.sunset }}</span>
+    </div>
+  </ng-container>
+</section>

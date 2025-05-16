@@ -1,0 +1,254 @@
+<section class="w-full p-0.5 flex max-w-full overflow-auto">
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Weather condition</p>
+      <span class="text-lg font-bold text-center">{{
+        weatherData?.current?.condition?.text
+      }}</span>
+    </div>
+    <!-- addurl here to icon -->
+    <div class="flex-none text-4xl">
+      <!-- <fa-icon [icon]="faSun"></fa-icon> -->
+      <img
+        class="w-6 h-6"
+        [src]="weatherData?.current?.condition?.icon"
+        [alt]="weatherData?.current?.condition?.text"
+      />
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Feels like</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.feelslike_c }}&deg;C</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Humidity</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.humidity }}%</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Sunrise</p>
+      <span
+        class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.sunrise }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Sunset</p>
+      <span
+        class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.sunset }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Moonrise</p>
+      <span
+        class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.moonrise }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Moonset</p>
+      <span
+        class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.moonset }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Moon Illumination</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.moon_illumination
+
+
+
+        }}%</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Moon Phase</p>
+      <span
+        class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.astro?.moon_phase }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Chance of Rain</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.day?.daily_chance_of_rain
+
+        }}%</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Average visibility</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.forecast?.forecastday?.[0]?.day?.avgvis_km}}km</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">UV</p>
+      <span class="text-lg font-bold text-center">{{
+        weatherData?.current?.uv
+      }}</span>
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Windchill temperature</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.windchill_c }}&deg;C</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Pressure</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.pressure_mb }}mbar</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Heat Index</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.heatindex_c }}&deg;C</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Dewpoint</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.dewpoint_c }}&deg;C</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Wind speed</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.wind_mph }}mph</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Wind direction</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.wind_degree }}&deg;{{
+          weatherData?.current?.wind_dir
+        }}</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Precipitation</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.precip_mm }}mm</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Cloud cover</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.cloud }}%</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+
+  <div class="rounded-2xl bg-gray-400/80 p-6 m-1 flex flex-none basis-54">
+    <div class="flex-1">
+      <p class="text-sm">Wind gust</p>
+      <span class="text-lg font-bold text-center"
+        >{{ weatherData?.current?.gust_mph }}mph</span
+      >
+    </div>
+    <div class="flex-none text-4xl">
+      <fa-icon [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+</section>

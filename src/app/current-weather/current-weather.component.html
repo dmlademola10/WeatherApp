@@ -1,0 +1,80 @@
+<section
+  id="current"
+  class="h-full w-full text-center flex flex-col justify-center content-center text-yellow-300 [text-shadow:2px_2px_4px_rgb(0,0,0)]"
+>
+  <div class="relative mb-6 w-11/12 sm:w-1/2 mr-auto ml-auto">
+    <div
+      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+    >
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </div>
+    <input
+      [(ngModel)]="searchString"
+      autocomplete="off"
+      type="text"
+      id="input-group-1"
+      class="bg-gray-400/80 border text-black border-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+      placeholder="Search Locations..."
+      (input)="search()"
+      (focus)="
+        searchRes.classList.remove('hidden'); searchRes.classList.add('block')
+      "
+    />
+    <div
+      class="absolute inset-y-0 end-0 flex items-center pe-3.5 cursor-pointer"
+      (click)="getUserLocation()"
+      title="Get current location"
+    >
+      <fa-icon [icon]="faLocation"></fa-icon>
+    </div>
+    <div
+      #searchRes
+      class="absolute text-black text-left rounded-lg end-0 w-full max-h-52 z-20 bg-gray-400 text-shadow-none p-1.5 hidden overflow-auto"
+    >
+      <span
+        class="text-sm float-end cursor-pointer hover:bg-gray-800 hover:text-white"
+        id="close_btn"
+        (click)="
+          searchRes.classList.remove('block'); searchRes.classList.add('hidden')
+        "
+      >
+        close &times;
+      </span>
+      <ul *ngIf="searchResults.length !== 0; else noResults">
+        <li
+          *ngFor="let res of searchResults"
+          (click)="changeLoc(res.url)"
+          [attr.data-url]="res.url"
+          class="p-2 text-lg cursor-pointer hover:bg-gray-800 hover:text-white rounded-md"
+        >
+          {{ res.name + ", " + res.region + ", " + res.country }}
+        </li>
+      </ul>
+      <ng-template #noResults>
+        <span class="text-lg text-red-950 text-center"
+          >No records found! Type at least three characters.</span
+        >
+      </ng-template>
+    </div>
+  </div>
+
+  <span class="text-3xl font-bold block">{{
+    weatherData.location.name +
+      ", " +
+      weatherData.location.region +
+      ", " +
+      weatherData.location.country
+  }}</span>
+  <span class="text-xs font-semibold block"
+    >Last updated: {{ weatherData.current.last_updated }}.</span
+  >
+  <p class="text-9xl mt-1.5 mb-1.5 font-extrabold">
+    {{ weatherData.current.temp_c }}&deg;C
+  </p>
+  <span class="block text-md font-semibold"
+    >{{ weatherData.current.condition.text }}
+    {{ weatherData.forecast.forecastday[0].day.maxtemp_c + "&deg;C" }}/{{
+      weatherData.forecast.forecastday[0].day.mintemp_c + "&deg;C"
+    }}</span
+  >
+</section>
